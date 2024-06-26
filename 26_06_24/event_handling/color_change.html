@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handling</title>
+</head>
+<body>
+    <button> Click to change the color </button>
+
+    <script>
+       let btn= document.querySelector("button");
+
+
+        function random(max){
+            return Math.floor(Math.random() * (max+1));  //scales this number to be between 0 and max + 1[since 1 is excluded]
+        }
+
+        btn.addEventListener("click", (event)=>{
+            let randCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            document.body.style.backgroundColor=randCol;
+
+            event.target.style.backgroundColor=randCol;  //"event.target" refers to the element that triggered the event
+        })
+    </script>
+</body>
+</html>

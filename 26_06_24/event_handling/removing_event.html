@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handling</title>
+</head>
+<body>
+    <button> Click to change the color </button>
+
+    <input id="input" type="text"/>
+    <div id="output"></div>
+
+    <script>
+       const body =document.body;
+       let btn= document.querySelector("button");
+       let count=0;
+       const controller = new AbortController();
+
+        function random(max){
+            return Math.floor(Math.random() * (max+1));  //scales this number to be between 0 and max + 1[since 1 is excluded]
+        }
+
+        btn.addEventListener("click", (event)=>{
+            let randCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            body.style.backgroundColor=randCol;
+            event.target.style.backgroundColor=randCol;  //"event.target" refers to the element that triggered the event
+            count+=1;
+
+            if(count==5){
+                body.style.backgroundColor="white";
+                event.target.style.backgroundColor="grey"
+                controller.abort();
+        }
+
+        }, {signal: controller.signal});
+
+        let input=document.querySelector("#input")
+        let output=document.querySelector("#output")
+
+        input.addEventListener("keydown", (e)=>{
+            output.textContent=`You Pressed "${event.key}".`;
+        })
+
+
+
+  
+                   
+    </script>
+</body>
+</html>

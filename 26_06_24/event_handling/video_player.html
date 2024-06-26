@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+</head>
+<body>
+    <button>play video</button>
+
+    <div class="hidden">
+        <video>
+            <source
+                src="https://cdn.pixabay.com/video/2024/06/20/217490_tiny.mp4"
+                type="video"/> 
+        </video>
+    </div>
+
+    <script>
+        let btn= document.querySelector("button")
+        let vid=document.querySelector("video")
+        let box=document.querySelector("div")
+
+        btn.addEventListener("click",()=>box.classList.remove("hidden"))
+        vid.addEventListener("click",()=>video.play())
+        box.addEventListener("click",()=>box.classList.add("hidden"))
+    </script>
+</body>
+</html>

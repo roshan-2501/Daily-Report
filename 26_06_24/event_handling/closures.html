@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closures</title>
+  </head>
+  <body>
+    <script>
+      function init() {
+        var name = "Roshan"; // name is a local variable created by init
+        function displayName() {
+          // displayName() is the inner function, that forms the closure
+          console.log(name); // use variable declared in the parent function
+        }
+        displayName();
+      }
+      init();
+
+      /* function makeFunc() {                   another example of closures
+  const name = "Mozilla";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
+*/
+    </script>
+  </body>
+</html>
