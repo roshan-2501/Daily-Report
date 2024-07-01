@@ -1,0 +1,54 @@
+body {
+  background-color: darkgrey;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.main {
+  justify-content: center;
+  margin: 10% 40%;
+  align-content: center;
+}
+
+.ip {
+  padding-top: 10px;
+  margin-right: 6px;
+}
+
+input {
+  border-radius: 5px;
+  width: 100%;
+  font-size: 20px;
+}
+
+h1 {
+  padding-left: 20px;
+}
+
+.obj {
+  display: flex;
+  flex-direction: column;
+}
+
+.submitBtn {
+  align-items: center;
+  padding-left: 35%;
+  padding-top: 10%;
+}
+
+#btn {
+  border: 1px solid white;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#btn:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+#selectOp {
+  height: 30px;
+  border-radius: 5px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARRAY OBJECTS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>ARRAY OBJECTS</h1>
+
+      <div class="obj">
+        <select name="methods" id="selectOp">
+          <option>-- Array methods --</option>
+          <option value="Length">Length</option>
+          <option value="Join">Join</option>
+          <option value="slice">Slice</option>
+          <option value="indexOf">Index Of</option>
+          <option value="push">Push</option>
+          <option value="splice">Splice</option>
+          <option value="filter">Filter</option>
+          <option value="map">Map</option>
+          <option value="reduce">Reduce</option>
+          <option value="keys">Keys</option>
+          <option value="typeof">Type Of</option>
+          <option value="includes">Includes</option>
+        </select>
+        <div class="ip">
+          <input placeholder="Enter your value" type="text" />
+          <input  id="start" placeholder="start index for splice " type="text" />
+          <input  id="delete" placeholder="delete Count splice" type="text" />
+        </div>
+        <div class="submitBtn">
+          <button type="submit" id="btn">SUBMIT</button>
+        </div>
+
+        <!-- <h1 id="result"></h1> -->
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
