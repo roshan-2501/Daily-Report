@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <input type="text" placeholder="Enter your name" class="name" />
+      <input type="text" placeholder="Enter your username" class="username" />
+      <input type="email" placeholder="Enter your email" class="email" />
+      <input type="text" placeholder="Enter your phone " class="phone" />
+      <div class="btn">
+        <button onClick="addFunction()" id="add">SUBMIT</button>
+        <!-- <button id="update" style="background-color: green; color: white;">UPDATE</button>
+        <button id="delete" style="background-color: goldenrod; color: white;">DELETE</button> -->
+        <!-- <pre id="output"></pre> -->
+      </div>
+    </div>
+
+    <script>
+      function addFunction() {
+        let full_name = document.querySelector(".name").value;
+        let user_name = document.querySelector(".username").value;
+        let user_email = document.querySelector(".email").value;
+        let user_phone = document.querySelector(".phone").value;
+
+        let makeId = () => {
+          let ID = "";
+          let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+          for (var i = 0; i < 12; i++) {
+            ID += characters.charAt(Math.floor(Math.random() * 36));
+          }
+          return ID;
+        };
+
+        let newUser = {
+          id: makeId(),
+          name: full_name,
+          username: user_name,
+          email: user_email,
+          phone: user_phone,
+        };
+
+        const storedData = localStorage.getItem("usersData"); // Retrieve the data from local storage
+        const users = JSON.parse(storedData); // Parse the JSON string back to a JavaScript object
+
+        users.push(newUser);
+
+        const updatedData = JSON.stringify(users);
+        localStorage.setItem("usersData", updatedData); // store the updated data into the local storage
+
+        console.log(updatedData);
+        history.back();
+      }
+    </script>
+  </body>
+</html>

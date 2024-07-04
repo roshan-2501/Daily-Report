@@ -1,0 +1,19 @@
+.addButton{
+    position: absolute;
+    padding-left : 90%;
+    top:40px;
+    left:25px
+}
+
+.btn{
+    width:100px;
+}
+
+.tbl{
+    margin:2% 10%
+}
+
+a{
+    text-decoration: none;
+    color: white ;
+}

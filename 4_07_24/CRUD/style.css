@@ -1,0 +1,30 @@
+body{
+    background-color: cornflowerblue;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    margin: 10% 30%;
+}
+
+input{
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+button{
+    border-radius: 5px;
+    width:150px;
+    background-color: crimson;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.btn{
+    padding-top: 10px;
+}
