@@ -28,14 +28,9 @@
         let user_email = document.querySelector(".email").value;
         let user_phone = document.querySelector(".phone").value;
 
-        let makeId = () => {
-          let ID = "";
-          let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-          for (var i = 0; i < 12; i++) {
-            ID += characters.charAt(Math.floor(Math.random() * 36));
-          }
-          return ID;
-        };
+        function makeId() {
+          return '_' + Math.random().toString(36).substr(2, 9);
+      }
 
         let newUser = {
           id: makeId(),

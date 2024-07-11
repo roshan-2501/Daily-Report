@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body onload="getValue()">
+    <div class="main">
+      <input type="text" placeholder="Enter your name" class="name" />
+      <input type="text" placeholder="Enter your username" class="username" />
+      <input type="email" placeholder="Enter your email" class="email" />
+      <input type="text" placeholder="Enter your phone " class="phone" />
+      <div class="btn">
+        <button onClick="editFunction()" id="add">EDIT</button>
+      </div>
+    </div>
+
+    <script>
+
+      //it will get the value on loading of the page
+      function getValue() {
+        let email = localStorage.getItem("sharedValue");
+        const storedData = localStorage.getItem("usersData"); // Retrieve the data from local storage
+        const users = JSON.parse(storedData);
+
+        let full_name = document.querySelector(".name");
+        let user_name = document.querySelector(".username");
+        let user_email = document.querySelector(".email");
+        let user_phone = document.querySelector(".phone");
+
+        const index = users.findIndex((user) => user.email === email);
+        full_name.value= users[index].name;
+        user_name.value=users[index].username;
+        user_email.value=users[index].email;
+        user_phone.value=users[index].phone;
+      }
+
+
+      //function for edit 
+      function editFunction() {
+
+        let email = localStorage.getItem("sharedValue");
+        const storedData = localStorage.getItem("usersData"); // Retrieve the data from local storage
+        const users = JSON.parse(storedData);
+
+        const index = users.findIndex((user) => user.email === email);
+
+        let full_name = document.querySelector(".name").value;
+        let user_name = document.querySelector(".username").value;
+        let user_email = document.querySelector(".email").value;
+        let user_phone = document.querySelector(".phone").value;
+
+        users[index].name= full_name;
+        users[index].username= user_name;
+        users[index].email= user_email;
+        users[index].phone= user_phone;
+
+        localStorage.setItem("usersData", JSON.stringify(users));
+        history.back();
+        
+      }
+    </script>
+  </body>
+</html>
